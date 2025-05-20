@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rút Kim Cương Free Fire</title>
+  <style>
+    body {
+      background: linear-gradient(to right, #ff4e50, #f9d423);
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 40px;
+      color: #fff;
+    }
+    .box {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 400px;
+      margin: auto;
+    }
+    input, select, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 15px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    button {
+      background-color: #28a745;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2>Rút Kim Cương Free Fire</h2>
+    <form onsubmit="handleSubmit(event)">
+      <input type="text" id="gameId" placeholder="Nhập ID Free Fire" required />
+      <select id="amount" required>
+        <option value="">Chọn số kim cương</option>
+        <option value="50">50 KC</option>
+        <option value="100">100 KC</option>
+        <option value="200">200 KC</option>
+      </select>
+      <button type="submit">Gửi Yêu Cầu</button>
+    </form>
+    <p id="msg"></p>
+  </div>
+
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault();
+      const id = document.getElementById("gameId").value;
+      const kc = document.getElementById("amount").value;
+      document.getElementById("msg").innerText = 
+        `Yêu cầu rút ${kc} kim cương cho ID ${id} đã được gửi!`;
+    }
+  </script>
+</body>
+</html>
